@@ -1,0 +1,232 @@
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  letter-spacing: .05em;
+  font-family: "Noto Sans CJK JP","sans-serif";
+  color: #171717;
+  width: 100%;
+  height: 100%;
+}
+img {
+  vertical-align: bottom;
+  width: 100%;
+}
+/* サイドバーーーーーーーーーーーーーーーー */
+.menu-trigger {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+  transform: translateX(0);
+  transition: transform .5s;
+ }
+ .menu-trigger.active {
+  transform: translateX(140px);
+}
+ .menu-trigger span {
+  display: inline-block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: rgba(255,255,255,.4);
+}
+.menu-trigger.active span {
+  background-color: rgba(255,255,255,.4);
+}
+.menu-trigger span:nth-of-type(1) {
+  top: 0;
+}
+.menu-trigger.active span:nth-of-type(1) {
+  transform: translateY(12px) rotate(-45deg);
+}
+.menu-trigger span:nth-of-type(2) {
+  top: 12px;
+}
+.menu-trigger.active span:nth-of-type(2) {
+  opacity: 0;
+}
+.menu-trigger span:nth-of-type(3) {
+  bottom: 0;
+}
+.menu-trigger.active span:nth-of-type(3) {
+  transform: translateY(-12px) rotate(45deg);
+}
+
+.side-bar {
+  width: 200px;
+  height: 100vh;
+  padding-top: 60px;
+  background: linear-gradient(135deg,#137,#899);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  transform: translate(-200px);
+  transition: all .5s;
+  color: #fff;
+}
+.side-bar.open {
+  transform: translateZ(0);
+}
+.user-name {
+  height: 60px;
+  padding:15px 10px 5px;
+  margin-bottom: 15px;
+}
+.user-name h2 {
+  border-bottom: 1px solid #fff;
+  display: inline;
+  opacity: .7;
+  font-size: 1.4rem;
+}
+.user-name p {
+  font-size: 1.8rem;
+  padding-top: 5px;
+  text-align: center;
+  opacity: .8;
+}
+.group-name {
+  height: 40px;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+/* ヘッダーーーーーーーーーーーーーー */
+header {
+  height: 60px;
+  width: 100vw;
+  background:linear-gradient(#137,#899);
+  position: fixed;
+}
+.header {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 70px 0 205px;
+  color: #fff;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+}
+.app-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #fff;
+  opacity: 0.6;
+  text-decoration: none;
+}
+.current-group {
+  margin: 15px 0 15px 40px;
+}
+.header-left h2 {
+  font-size: 2rem;
+}
+.header-left p {
+  font-size: 1.2rem;
+}
+.nav-icon {
+  color: #fff;
+  opacity: .7;
+  cursor: pointer;
+  position: relative;
+  margin: 0 0 5px 5px;
+  width: 29px;
+}
+.nav-lists {
+  display: flex;
+  flex-direction: column;  
+  margin-top: 20px;
+  width: 120px;
+}
+.nav-list {
+  background-color: rgba(17,55,107,.8);
+  border-radius: 2px;
+  box-shadow: 3px 5px 5px rgba(61, 50, 50, 0.4);
+  border-radius: 4px;
+  display: none;
+  padding: 5px 10px;
+  width: 200px;
+}
+.nav-item{
+  color: rgba(255,255,255, .7);
+  text-decoration: none;
+  display: block;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border-bottom: 1px solid rgb(17,55,107);
+  padding: 10px 0 5px 5px;
+}
+.nav-item:hover  {
+  background-color: rgba(17,55,107,.3);
+}
+.nav-lists:hover .nav-list {
+  display: block;
+}
+/* メインーーーーーーーーーーーーーーーー */
+body {
+  height: 100vh;
+}
+main {
+  background-image: url(/assets/image1.png);
+  background-color: rgba(255,255,255,0.6);
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: 60px;
+  overflow-x: hidden;
+}
+.contents {
+  width: 100%;
+  height: 100vh;
+}
+.content-lists {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh;
+  overflow: scroll;
+}
+.content-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 200px;
+  height: 250px;
+  margin: 25px;
+  background-color: #fff;
+  box-shadow: 5px 5px 5px rgba(61, 50, 50, 0.4);
+  border-radius: 10px;
+}
+.content-list h2 {
+  margin-top: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.content-icon {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+}
+.content-name {
+  font-size: 1.2rem;
+  opacity: 0.7;
+  margin-left: 15px;
+}
+.heart-icon {
+  color: orange;
+}
+.trash-icon {
+  color: black;
+  margin-left: 10px;
+}
