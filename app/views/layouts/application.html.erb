@@ -9,6 +9,7 @@
    <%= javascript_include_tag 'application'%>
   </head>
   <body>
+  <% if user_signed_in? %>
     <header>
       <div class= "header">
         <div class= "header-left">
@@ -27,10 +28,10 @@
                 <%= link_to "投稿", "#", class: "nav-item" %>
               </li>
               <li>
-                <%= link_to "ログアウト", "#", class: "nav-item" %>
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-item" %>
               </li>
               <li>
-                <%= link_to "ユーザー編集", "#", class: "nav-item" %>
+                <%= link_to "ユーザー編集", edit_user_path(current_user), class: "nav-item" %>
               </li>
               <li>
                 <%= link_to "グループ作成", "#" , class: "nav-item" %>
@@ -43,6 +44,9 @@
         </div>
       </div>
     </header>
+  <% end %>
+  <main>
     <%= yield %>
-  </body>
+  </main>
+ </body>
 </html>

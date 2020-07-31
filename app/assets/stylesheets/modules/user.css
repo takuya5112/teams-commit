@@ -1,0 +1,52 @@
+.AccountPage {
+  width: 600px;
+  margin: 120px auto 0;
+  padding: 30px;
+  color: #fff;
+  background-color: rgba(17,55,107,.8);
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px 5px rgba(0,0,0,.5);
+}
+.AccountPage__height {
+  height:500px;
+}
+.AccountPage__title h2{
+  text-align: center;
+  font-size: 4rem;
+  letter-spacing: 3px;
+  border-bottom: 1px solid rgb(108, 113, 116);
+  width: 400px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+.AccountPage__form {
+  width: 400px;
+  height: 225px;
+  margin: 0 auto;
+  
+}
+.FormField__input--normal input {
+  width: 100%;
+  letter-spacing: 1px;
+  padding: 5px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+.Button {
+  display: inline-block;
+  height: 30px;
+  width: 100px;
+  letter-spacing: 1px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50px;
+  margin-left: 147px;
+  color: rgb(166, 41, 60);
+  cursor: pointer; 
+}
+.UserButton {
+  margin: 15px 0 0 145px;               
+  color: #fff;
+  background-color: rgba(214,173,36,.9);
+}
