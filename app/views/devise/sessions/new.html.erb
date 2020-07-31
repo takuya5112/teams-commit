@@ -1,0 +1,29 @@
+<div class="AccountPage">
+  <div class="AccountPage__title">
+    <h2>Sign In</h2>
+  </div>
+  <div class="AccountPage__form">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="FormField">
+        <div class="FormField__label--normal">
+          <%= f.label :email %>
+        </div>
+        <div class="FormField__input--normal">
+          <%= f.email_field :email, autofocus: true %>
+        </div>
+        <div class="FormField">
+          <div class="FormField__label--normal">
+            <%= f.label :password %>
+          </div>
+          <div class="FormField__input--normal">
+            <%= f.password_field :password, autocomplete: "off" %>
+          </div>
+        </div>
+        <div class="actions">
+          <%= f.submit "Sign In", class: 'Button UserButton' %>
+        </div>
+      </div>
+    <% end %>
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
