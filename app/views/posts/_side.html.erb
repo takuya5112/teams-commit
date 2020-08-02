@@ -1,0 +1,22 @@
+<div class= "menu-trigger">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+<div class= "side-bar">
+  <div class= "user-name">
+      <h2>User Name</h2>
+        <div class= "user_edit">
+          <p><%= current_user.name %></p>
+            <%= link_to fa_icon('cog'), edit_user_path(current_user), class: "side_icon1" %>
+        </div>
+        </div>
+        <% current_user.groups.each do |group| %>
+          <%= link_to group_posts_path(group) do %>
+            <div class= "group-name">
+              <h2><%= group.name %></h2>
+            </div>
+          <% end %>
+        <% end %>
+        <%= link_to fa_icon('plus'), new_group_path , class: "side_icon2" %>
+  </div>

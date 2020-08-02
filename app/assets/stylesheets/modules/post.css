@@ -1,0 +1,120 @@
+.Form__new {
+  width: 800px;
+  height: 600px;
+  margin: 40px auto 0 ;
+  background-color: rgba(17,55,107,.8);
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px 5px rgba(0,0,0,.5);
+  padding: 20px;
+  color: #fff;
+}
+.Form__new h2 {
+  text-align: center;
+  font-size: 4rem;
+  letter-spacing: 3px;
+  border-bottom: 1px solid rgb(108, 113, 116);
+  width: 400px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+.Form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.Form__contents {
+  text-align: right;
+  width: 700px;
+}
+.Form__inputTitle,
+.Form__inputText {
+  width: 100%;
+  letter-spacing: 1px;
+  padding: 5px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.Form__inputTitle {
+  margin-bottom: 20px;
+}
+.Form__submit {            
+  color: #fff;
+  background-color: rgba(214,173,36,.9);
+  display: inline-block;
+  height: 45px;
+  width: 120px;
+  letter-spacing: 1px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50px;
+}
+.Form__icon {
+  color: black;
+  width: 100px;
+  height: 30px;
+  padding: 5px;
+  text-align: center;
+  background: rgba(255,255,255,.8);
+  border-radius: 5px;
+}
+.Hidden {
+  display: none;
+}
+.wrapper {
+  width: 800px;
+  height: calc(100vh - 70px);
+  margin: 0 auto;
+  background-color: rgba(17,55,107,.8);
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px 5px rgba(0,0,0,.5);
+}
+.show-content {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 600px;
+}
+.show-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 700px;
+  height: 750px;
+  margin: 0 auto;
+  background-color: #fbfaf5;
+  box-shadow: 5px 5px 5px rgba(61, 50, 50, 0.4);
+  border-radius: 10px;
+  margin-top: 15px;
+}
+.show-image {
+  width: 100%;
+  height: 300px;
+}
+.show-title {
+  margin-top: 10px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
+.show-icon {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 35px;
+}
+.show-date {
+  font-size: .6rem;
+  opacity: .7;
+  margin-left: 10px;
+  padding-top: 5px;
+}
+.textArea {
+  height: 350px;
+  width: 500px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 5px;
+}

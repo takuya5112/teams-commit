@@ -10,5 +10,6 @@ $(function() {
       $('.overlay').addClass('open');
     }
   });
-  
+
+  $(".content-lists").scrollTop($(".content-lists")[0].scrollHeight);
 });

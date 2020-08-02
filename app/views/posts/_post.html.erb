@@ -1,0 +1,16 @@
+<li class= "content-list">
+  <%= image_tag post.image.url, class: "content-image"%>
+    <div class= "content-date">
+      <%= post.created_at.strftime("%m/%d %H時%M分") %>
+    </div>
+    <%= link_to "<#{post.title}>", group_post_path(@group, post.id), class: "post-title" %>
+      <div class= "content-icon">
+        <%= link_to fa_icon("heart"), "#" , class: "heart-icon"%>
+        <% if user_signed_in? && current_user.id == post.user_id %>
+           <%= link_to fa_icon("trash"), group_post_path(@group, post.id), method: :delete, data:{confirm: "削除しますか？"}, class: "trash-icon"%>
+        <% end %>
+          <div class= "content-name">
+          <%= post.user.name %>
+        </div>
+    </div>
+</li>

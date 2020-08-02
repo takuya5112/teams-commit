@@ -1,10 +1,12 @@
+<div class= "errors">
+    <%= devise_error_messages! %>
+</div>
 <div class="AccountPage AccountPage__height">
   <div class="AccountPage__title">
     <h2>Create Account</h2>
   </div>
   <div class="AccountPage__form">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
       <div class="FormField">
         <div class="FormField__label--normal">
           <%= f.label :name %>
