@@ -1,0 +1,39 @@
+.notice {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin: 0 auto;
+  width: 350px;
+  font-weight: bold;
+  background-color: rgba(47, 196, 117,.8);
+  border-radius: 10px;
+  color: rgba(255, 255, 255, .9);
+  font-size: 1.4rem;
+}
+
+.alert {
+  height: 40px;
+  line-height: 40px;
+  width: 350px;
+  background-color: rgba(243,85,0, .8);
+  border-radius: 10px;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: bold;
+  color: rgba(255, 255, 255, .9);
+  font-size: 1.4rem;
+}
+.flash-items {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0 auto ;
+  width: 500px;
+  position: fixed;
+  top: 60px;
+  right: 0;
+}
+.flash-icon {
+  width: 40px;
+  height: 40px;
+}

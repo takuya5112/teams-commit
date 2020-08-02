@@ -23,7 +23,7 @@ Things you may want to cover:
 
 * ...
 
-## groups_usersテーブル
+## group_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
@@ -46,7 +46,7 @@ Things you may want to cover:
 - has_many :likes
 - has_many :liked_posts, through: :likes, source: :post
 - has_many :group_users
-- has_many :group, through: :group_users
+- has_many :groups, through: :group_users
 - has_many :comments
 
 
@@ -65,7 +65,8 @@ Things you may want to cover:
 ## postsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|||
+|title|string|||
+|text|string|||
 |image|string|||
 |user_id|integer|null:false, foreign_key: true|
 |group_id|integer|null:false, foreign_key: true|

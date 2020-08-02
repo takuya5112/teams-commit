@@ -4,48 +4,24 @@
     <title>TeamsCommit</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
    <%= javascript_include_tag 'application'%>
   </head>
   <body>
-  <% if user_signed_in? %>
+    <% if user_signed_in? %>
     <header>
       <div class= "header">
         <div class= "header-left">
-          <%= link_to "TeamsCommit", "#", class: "app-title" %>
-          <div class= "current-group">
-            <h2>80期チームA</h2>
-          </div>
-         </div>
-        <div class= "heder-right">
-          <div class= "nav-lists">
-            <div class= "nav-icon">
-             <%= fa_icon "chevron-circle-down 2x" %>
-              </div>
-              <ul class= "nav-list">
-              <li>
-                <%= link_to "投稿", "#", class: "nav-item" %>
-              </li>
-              <li>
-                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-item" %>
-              </li>
-              <li>
-                <%= link_to "ユーザー編集", edit_user_path(current_user), class: "nav-item" %>
-              </li>
-              <li>
-                <%= link_to "グループ作成", "#" , class: "nav-item" %>
-              </li>
-              <li>
-                <%= link_to "グループ編集", "#", class: "nav-item" %>
-              </li>
-              </ul>
-          </div>
+          <%= link_to "TeamsCommit", root_path, class: "app-title" %>
         </div>
       </div>
     </header>
   <% end %>
   <main>
+    <div class= "flash-items">
+      <%= render 'layouts/notifications' %>
+      <%= image_tag "/assets/image3.png", class: "flash-icon"%>
+    </div>
     <%= yield %>
   </main>
  </body>

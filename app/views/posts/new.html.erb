@@ -1,0 +1,14 @@
+<div class="Form__new">
+  <h2>投稿する</h2>
+  <%= form_with model: [@group, @post], html: {class: "Form"}, local: true do |f| %>
+    <div class="Form__contents">
+      <%= f.text_field :title, class: 'Form__inputTitle', placeholder: 'title' %>
+      <%= f.text_area :text, class: 'Form__inputText', placeholder: 'text', rows: "14" %>
+      <%= f.label :image, class: 'Form__inputImage' do %>
+        <%= fa_icon('image 2x', class: 'Form__icon') %>
+        <%= f.file_field :image, class: 'Hidden' %>
+      <% end %>
+    </div>
+    <%= f.submit 'Send', class: 'Form__submit' %>
+  <% end %>
+</div>
