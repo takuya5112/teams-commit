@@ -4,10 +4,20 @@
        <%= image_tag @post.image.url, class: "show-image"%>
         <%= link_to "<#{@post.title}>", group_post_path(@group, @post.id), class: "show-title" %>
         <div class= "textArea">
-          <%= @post.text%>
+          <%= raw Rinku.auto_link(h(@post.text), :all, 'target="_blank"') %>
           </div>
           <div class= "show-icon">
-            <%= link_to fa_icon("heart"), "#" , class: "heart-icon"%>
+            <%if current_user.already_liked?(@post) %>
+              <%= button_to group_post_like_path(@group,@post), method: :delete, class: "good-icon2 thumbsUp-icon" do %>
+              <p><%= fa_icon("thumbs-up") %></p>
+              <%= @post.likes.count %>
+              <% end %>
+            <% else %>
+              <%= button_to group_post_likes_path(@group,@post), class: "good-icon1 thumbsUp-icon" do %>
+               <p><%=fa_icon("thumbs-up") %></p>
+               <%= @post.likes.count %>
+            <% end %>
+         <% end %>
             <% if user_signed_in? && current_user.id == @post.user_id %>
               <%= link_to fa_icon("trash"), group_post_path(@group, @post.id), method: :delete, data:{confirm: "削除しますか？"}, class: "trash-icon"%>
             <% end %>
@@ -20,4 +30,26 @@
         </div>
      </div>
   </div>
+  <div class="container">
+    <% if current_user %>
+      <%= form_with(model: [@group,@post, @comment], local: true, id: "new-comment") do |form| %>
+        <%= form.text_field :text, placeholder: "コメントする", rows: "2", class: "comment-text textBox" %>
+        <%= form.submit "SEND", class: "comment-button form-submit" %>
+      <% end %>
+    <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
+  </div>
+  <div class="comments">
+      <h4>＜コメント一覧＞</h4>
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+          <p>
+           <strong><%=  comment.user.name %>：</strong>
+            <%= comment.text %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
 </div>
+
