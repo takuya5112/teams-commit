@@ -37,7 +37,7 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|null: false|
+|name|string|null: false|
 |email|string|null: false|
 |password|integer|null: false|
 
@@ -66,7 +66,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |title|string|||
-|text|string|||
+|text|text|||
 |image|string|||
 |user_id|integer|null:false, foreign_key: true|
 |group_id|integer|null:false, foreign_key: true|

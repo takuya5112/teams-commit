@@ -1,0 +1,12 @@
+<%if current_user.already_liked?(post) %>
+  <%= button_to group_post_like_path(@group,post,current_user.id), method: :delete, class: "good-icon2 thumbsUp-icon", remote: true do %>
+  <p><%= fa_icon("thumbs-up") %></p>
+  <%= post.likes.count %>
+  <% end %>
+<% else %>
+  <%= button_to group_post_likes_path(@group,post), class: "good-icon1 thumbsUp-icon", remote:true do %>
+
+    <p><%=fa_icon("thumbs-up") %></p>
+    <%= post.likes.count %>
+<% end %>
+<% end %>

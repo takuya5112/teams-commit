@@ -18,6 +18,47 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+::placeholder {
+  padding: 10px;
+}
+.textArea {
+  white-space: pre-line;
+  overflow: scroll;
+}
+.textArea a {
+  color: #137;
+}
+.textArea a:hover {
+  opacity: .7;
+}
+.thumbsUp-icon {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  height: 23px;
+  width: 33px;
+  border: 0;
+  background-color: #fff;
+  border-radius: 5px;
+  border-radius: 50%;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+  box-shadow: 0 .5px 1px rgba(0, 0, 0, 0.28);
+  cursor: pointer;
+}
+.good-icon1 p,
+.good-icon2 p {
+  padding-right: 2px;
+}
+.good-icon1 p {
+  color: rgb(191, 181, 174);
+}
+.good-icon2 p {
+  color: rgba(255, 173, 51,.9);
+}
+button:focus {
+	outline:0;
+}
 /* サイドバーーーーーーーーーーーーーーーー */
 .menu-trigger {
   display: inline-block;
@@ -168,7 +209,7 @@ header {
   opacity: .7;
   cursor: pointer;
   position: relative;
-  margin: 0 0 10px 5px;
+  margin: 0 0 10px 0px;
   width: 29px;
 }
 .nav-icon:hover {
@@ -191,6 +232,7 @@ header {
   display: none;
   padding: 5px 10px;
   width: 200px;
+  z-index: 1;
 }
 .nav-item{
   color: rgba(255,255,255, .7);
@@ -200,11 +242,15 @@ header {
   font-weight: bold;
   border-bottom: 1px solid rgb(17,55,107);
   padding: 10px 0 5px 5px;
+  margin: 0;
 }
 .nav-item:hover  {
   background-color: rgba(17,55,107,.3);
 }
 .nav-lists:hover .nav-list {
+  display: block;
+}
+.nav-item:hover .nav-list {
   display: block;
 }
 /* メインーーーーーーーーーーーーーーーー */

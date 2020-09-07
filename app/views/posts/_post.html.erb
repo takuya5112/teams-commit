@@ -5,7 +5,9 @@
     </div>
     <%= link_to "<#{post.title}>", group_post_path(@group, post.id), class: "post-title" %>
       <div class= "content-icon">
-        <%= link_to fa_icon("heart"), "#" , class: "heart-icon"%>
+       <div id= "like-<%= post.id %>">
+        <%= render partial: "likes/like", locals: {post: post}%>
+      </div>
         <% if user_signed_in? && current_user.id == post.user_id %>
            <%= link_to fa_icon("trash"), group_post_path(@group, post.id), method: :delete, data:{confirm: "削除しますか？"}, class: "trash-icon"%>
         <% end %>

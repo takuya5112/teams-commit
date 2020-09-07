@@ -33,6 +33,9 @@ class PostsController < ApplicationController
 
  def show
   @post = @group.posts.find(params[:id])
+  @comment = Comment.new
+  @comments = @post.comments.includes(:user)
+  @like = Like.new
  end
 
 
