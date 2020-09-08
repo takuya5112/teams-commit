@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: teams_commit_production
-  username: teams_commit
-  password: <%= ENV['TEAMS_COMMIT_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
