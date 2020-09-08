@@ -27,7 +27,7 @@ class PostsController < ApplicationController
     redirect_to request.referer
   else
     post.destroy
-    redirect_to request.referer, alert: '投稿を削除しました。'
+    redirect_to group_posts_path(@group), alert: '投稿を削除しました。'
   end
  end
 

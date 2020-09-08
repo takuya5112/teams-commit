@@ -7,17 +7,9 @@
           <%= raw Rinku.auto_link(h(@post.text), :all, 'target="_blank"') %>
           </div>
           <div class= "show-icon">
-            <%if current_user.already_liked?(@post) %>
-              <%= button_to group_post_like_path(@group,@post), method: :delete, class: "good-icon2 thumbsUp-icon" do %>
-              <p><%= fa_icon("thumbs-up") %></p>
-              <%= @post.likes.count %>
-              <% end %>
-            <% else %>
-              <%= button_to group_post_likes_path(@group,@post), class: "good-icon1 thumbsUp-icon" do %>
-               <p><%=fa_icon("thumbs-up") %></p>
-               <%= @post.likes.count %>
-            <% end %>
-         <% end %>
+           <div id= "like-<%= @post.id %>">
+            <%= render partial: "likes/like", locals: {post: @post}%>
+          </div>
             <% if user_signed_in? && current_user.id == @post.user_id %>
               <%= link_to fa_icon("trash"), group_post_path(@group, @post.id), method: :delete, data:{confirm: "削除しますか？"}, class: "trash-icon"%>
             <% end %>
